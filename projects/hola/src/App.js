@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import TwitterFollowCard from "./components/TwitterFollowCard.jsx";
 
 function App() {
+
+  const formatUsername = (userName) => `@${userName}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='section-cards'> 
+      <TwitterFollowCard formatUsername={formatUsername} userName="gravatar/sindresorhus@gmail.com" name="Nestor MJ" isFollowing={true}/>
+      <TwitterFollowCard formatUsername={formatUsername} userName="instagram/willsmith" name="Will Smith" isFollowing={false}/>
+    </section>
   );
 }
 
